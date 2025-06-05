@@ -2,23 +2,13 @@ import express, { Request, Response } from 'express';
 import mongoose from 'mongoose';
 import cors from 'cors';
 import dotenv from 'dotenv';
+import { Product } from './models/Product';
 
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
-
-const productSchema = new mongoose.Schema({
-  nombre: String,
-  sku: String,
-  descripcion: String,
-  categoria: String,
-  precioBase: Number,
-  especificaciones: mongoose.Schema.Types.Mixed,
-});
-
-const Product = mongoose.model('Product', productSchema);
 
 mongoose.connect(process.env.MONGODB_URI as string)
   .then(() => console.log('Conectado a MongoDB Atlas'))
