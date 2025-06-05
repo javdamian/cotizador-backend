@@ -106,7 +106,7 @@ type Producto = {
 
 1. **Clona el repositorio:**
    ```sh
-   git clone <repository-url>
+   git clone https://github.com/javdamian/cotizador-backend.git
    cd cotizador-backend
    ```
 
